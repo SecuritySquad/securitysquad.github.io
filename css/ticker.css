@@ -30,6 +30,7 @@
 .ticker-item::before, .ticker-item::after {
     content: ' - ';
 }
+
 @-webkit-keyframes opacity {
     0%,
     100% {
