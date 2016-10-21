@@ -1,8 +1,9 @@
 .ticker {
-    margin-top: 30px;
+    margin: 30px;
     font-size: 35px;
     line-height: 40px;
     font-family: 'Lato', sans-serif;
+    display: inline-block;
 }
 
 .ticker-display {
@@ -10,45 +11,11 @@
     display: inline-block;
     overflow: hidden;
     height: 42px;
-    padding: 0 40px;
-}
-
-.ticker-display::before {
-    content: '[';
-    float: left;
-}
-
-.ticker-display::after {
-    content: ']';
-    float: right;
-}
-
-.ticker-display::after, .ticker-display::before {
-    display: none;
-    font-size: 42px;
-    -webkit-animation-name: opacity;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: opacity;
-    animation-name: opacity;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-}
-
-.ticker-prefix {
-    display: inline;
-    float: left;
-    margin: 0;
 }
 
 .ticker-list {
-    margin-top: 0;
-    display: inline-block;
-    padding: 0 0 0 10px;
-    text-align: left;
     list-style: none;
+    padding: 0;
     -webkit-animation-name: change;
     -webkit-animation-duration: 6s;
     -webkit-animation-iteration-count: infinite;
@@ -60,11 +27,9 @@
     animation-iteration-count: infinite;
 }
 
-.ticker-item {
-    line-height: 40px;
-    margin: 0;
+.ticker-item::before, .ticker-item::after {
+    content: ' - ';
 }
-
 @-webkit-keyframes opacity {
     0%,
     100% {
