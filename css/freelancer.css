@@ -66,6 +66,15 @@ hr.star-light:after {
     color: white;
 }
 
+#about hr.star-light {
+    border-color: #ff9500;
+}
+
+#about hr.star-light::after {
+    background-color: #444444;
+    color: #ff9500;
+}
+
 hr.star-primary {
     border-color: #ff9500;
 }
@@ -136,14 +145,14 @@ header .intro-text .skills {
 }
 
 .navbar-custom .navbar-brand {
-    color: white;
+    color: #222222;
 }
 
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-    color: white;
+    color: #000000;
 }
 
 .navbar-custom .navbar-nav {
@@ -151,21 +160,18 @@ header .intro-text .skills {
 }
 
 .navbar-custom .navbar-nav li a {
-    color: white;
+    color: #222222;
 }
 
-.navbar-custom .navbar-nav li a:hover {
-    color: #444444;
+.navbar-custom .navbar-nav li a:hover,
+.navbar-custom .navbar-nav li a:focus,
+.navbar-custom .navbar-nav li a:active {
+    color: #000000;
     outline: none;
 }
 
-.navbar-custom .navbar-nav li a:focus,
-.navbar-custom .navbar-nav li a:active {
-    color: white;
-}
-
 .navbar-custom .navbar-nav li.active a {
-    color: white;
+    color: #ffffff;
     background: #444444;
 }
 
@@ -352,7 +358,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 footer {
-    color: white;
+    color: #222222;
 }
 
 footer h3 {
@@ -369,8 +375,9 @@ footer .footer-col {
 }
 
 footer .footer-below {
+    color: #ffffff;
     padding: 25px 0;
-    background-color: #233140;
+    background-color: #444444;
 }
 
 .btn-outline {
@@ -389,6 +396,21 @@ footer .footer-below {
     color: #444444;
     background: white;
     border: solid 2px white;
+}
+
+.btn-social.btn-outline {
+    color: #222222;
+    border: solid 2px #222222 !important;
+    background: transparent;
+}
+
+.btn-social.btn-outline:hover,
+.btn-social.btn-outline:focus,
+.btn-social.btn-outline:active,
+.btn-social.btn-outline.active {
+    color: #ffffff;
+    background: #222222;
+    border: solid 2px #222222;
 }
 
 .btn-primary {
@@ -594,11 +616,11 @@ fieldset[disabled] .btn-success.active {
 /* modified */
 #team {
     background-color: #ff9500;
-    color: white;
+    color: #222222 !important;
 }
 
 #team hr.star-primary {
-    border-color: white;
+    border-color: #222222;
 }
 
 #team hr.star-light::after {
