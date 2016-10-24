@@ -27,9 +27,9 @@
     animation-iteration-count: infinite;
 }
 
-.ticker-item::before, .ticker-item::after {
-    content: ' - ';
-}
+/*.ticker-item::before, .ticker-item::after {*/
+    /*content: ' - ';*/
+/*}*/
 
 @-webkit-keyframes opacity {
     0%,
