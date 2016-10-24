@@ -7,7 +7,7 @@ if (empty($_POST['name']) ||
     !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)
 ) {
     http_response_code(400);
-    echo 'please check your details!';
+    echo 'please check your details and the captcha!';
     exit();
 }
 
