@@ -21,7 +21,7 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #4b4b4b;
+    color: #444444;
     outline: none;
 }
 
@@ -62,7 +62,7 @@ hr.star-light {
 }
 
 hr.star-light:after {
-    background-color: #4b4b4b;
+    background-color: #444444;
     color: white;
 }
 
@@ -81,7 +81,7 @@ hr.star-primary:after {
 
 header {
     text-align: center;
-    background: #4b4b4b;
+    background: #444444;
     color: white;
 }
 
@@ -155,7 +155,7 @@ header .intro-text .skills {
 }
 
 .navbar-custom .navbar-nav li a:hover {
-    color: #4b4b4b;
+    color: #444444;
     outline: none;
 }
 
@@ -166,14 +166,14 @@ header .intro-text .skills {
 
 .navbar-custom .navbar-nav li.active a {
     color: white;
-    background: #4b4b4b;
+    background: #444444;
 }
 
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
     color: white;
-    background: #4b4b4b;
+    background: #444444;
 }
 
 .navbar-custom .navbar-toggle {
@@ -185,9 +185,9 @@ header .intro-text .skills {
 
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-    background-color: #4b4b4b;
+    background-color: #444444;
     color: white;
-    border-color: #4b4b4b;
+    border-color: #444444;
 }
 
 @media (min-width: 768px) {
@@ -224,7 +224,7 @@ section h2 {
 }
 
 section.success {
-    background: #4b4b4b;
+    background: #444444;
     color: white;
 }
 
@@ -344,7 +344,7 @@ section.success {
 }
 
 .floating-label-form-group-with-focus label {
-    color: #4b4b4b;
+    color: #444444;
 }
 
 form .row:first-child .floating-label-form-group {
@@ -386,7 +386,7 @@ footer .footer-below {
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-    color: #4b4b4b;
+    color: #444444;
     background: white;
     border: solid 2px white;
 }
@@ -440,8 +440,8 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-success {
     color: white;
-    background-color: #4b4b4b;
-    border-color: #4b4b4b;
+    background-color: #444444;
+    border-color: #444444;
     font-weight: 700;
 }
 
@@ -476,12 +476,12 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-    background-color: #4b4b4b;
-    border-color: #4b4b4b;
+    background-color: #444444;
+    border-color: #444444;
 }
 
 .btn-success .badge {
-    color: #4b4b4b;
+    color: #444444;
     background-color: white;
 }
 
@@ -642,7 +642,7 @@ fieldset[disabled] .btn-success.active {
     border-radius: 50% 50% 25% 50%;
 }
 
-.img-responsive {
+#securitysquad-logo {
     width: 256px;
     height: 256px;
 }
