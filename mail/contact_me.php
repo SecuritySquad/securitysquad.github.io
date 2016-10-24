@@ -37,6 +37,6 @@ $to = 'info@securitysquad.de';
 $email_subject = "Website Contact Form:  $name";
 $email_body = "You have received a new message from your website contact form.\n\n" . "Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nMessage:\n$message";
 // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-$headers = "From: noreply@securitysquad.de\n";
+$headers = "From: Securitysquad Website <noreply@securitysquad.de>\n";
 $headers .= "Reply-To: $email_address";
 mail($to, $email_subject, $email_body, $headers);
