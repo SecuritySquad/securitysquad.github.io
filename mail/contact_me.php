@@ -21,7 +21,7 @@ $options = [
     ]
 ];
 $context  = stream_context_create($options);
-$response = json_decode(file_get_contents($url, false, $context));
+$response = json_decode(file_get_contents($url, false, $context), true);
 if($response['success'] == false) {
     return false;
 }
