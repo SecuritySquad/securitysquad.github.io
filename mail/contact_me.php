@@ -6,7 +6,8 @@ if (empty($_POST['name']) ||
     empty($_POST['captcha']) ||
     !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)
 ) {
-    header('Status: 400 please check your details!');
+    http_response_code(400);
+    echo 'please check your details!';
     exit();
 }
 
@@ -23,7 +24,8 @@ $options = [
 $context  = stream_context_create($options);
 $response = json_decode(file_get_contents($url, false, $context), true);
 if($response['success'] == false) {
-    header('Status: 400 it seems that there was a captcha error!');
+    http_response_code(400);
+    echo 'it seems that there was a captcha error!';
     exit();
 }
 
