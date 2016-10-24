@@ -183,10 +183,10 @@ header .intro-text .skills {
 }
 
 .navbar-custom .navbar-toggle {
-    color: white;
+    color: #222222;
     text-transform: uppercase;
     font-size: 10px;
-    border-color: white;
+    border-color: #222222;
 }
 
 .navbar-custom .navbar-toggle:hover,
