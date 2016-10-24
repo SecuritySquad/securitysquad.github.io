@@ -6,8 +6,8 @@ if (empty($_POST['name']) ||
     empty($_POST['captcha']) ||
     !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)
 ) {
-    echo "No arguments Provided!";
-    return false;
+    header('Status: 400 please check your details!');
+    exit();
 }
 
 $captcha = strip_tags(htmlspecialchars($_POST['captcha']));
@@ -23,7 +23,8 @@ $options = [
 $context  = stream_context_create($options);
 $response = json_decode(file_get_contents($url, false, $context), true);
 if($response['success'] == false) {
-    return false;
+    header('Status: 400 it seems that there was a captcha error!');
+    exit();
 }
 
 $name = strip_tags(htmlspecialchars($_POST['name']));
@@ -37,5 +38,3 @@ $email_body = "You have received a new message from your website contact form.\n
 $headers = "From: noreply@securitysquad.de\n";
 $headers .= "Reply-To: $email_address";
 mail($to, $email_subject, $email_body, $headers);
-return true;
-?>

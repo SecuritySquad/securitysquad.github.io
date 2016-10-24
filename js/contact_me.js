@@ -43,13 +43,20 @@ $(function () {
 
                     //clear all fields
                     $('#contactForm').trigger("reset");
+                    grecaptcha.reset();
                 },
-                error: function () {
+                error: function (xhr, status, error) {
+                    console.log(status);
+                    console.log(xhr);
+                    var message = 'it seems that my mail server is not responding. Please try again later!';
+                    if (status = 400) {
+                        message = xhr.responseText;
+                    }
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", " + message);
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
