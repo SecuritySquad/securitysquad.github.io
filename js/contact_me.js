@@ -13,8 +13,8 @@ $(function () {
             // get values from FORM
             var name = $("input#name").val();
             var email = $("input#email").val();
-            var phone = $("input#phone").val();
             var message = $("textarea#message").val();
+            var captcha = grecaptcha.getResponse();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -25,8 +25,8 @@ $(function () {
                 type: "POST",
                 data: {
                     name: name,
-                    phone: phone,
                     email: email,
+                    captcha: captcha,
                     message: message
                 },
                 cache: false,

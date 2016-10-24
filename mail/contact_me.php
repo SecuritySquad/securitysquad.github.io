@@ -3,9 +3,26 @@
 if (empty($_POST['name']) ||
     empty($_POST['email']) ||
     empty($_POST['message']) ||
+    empty($_POST['captcha']) ||
     !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)
 ) {
     echo "No arguments Provided!";
+    return false;
+}
+
+$captcha = strip_tags(htmlspecialchars($_POST['captcha']));
+$url = 'https://www.google.com/recaptcha/api/siteverify';
+$data = ['secret'   => file_get_contents('captcha_secret'), 'response' => $captcha, 'remoteip' => $_SERVER['REMOTE_ADDR']];
+$options = [
+    'http' => [
+        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method'  => 'POST',
+        'content' => http_build_query($data)
+    ]
+];
+$context  = stream_context_create($options);
+$response = json_decode(file_get_contents($url, false, $context));
+if($response['success'] == false) {
     return false;
 }
 
@@ -13,8 +30,6 @@ $name = strip_tags(htmlspecialchars($_POST['name']));
 $email_address = strip_tags(htmlspecialchars($_POST['email']));
 $message = strip_tags(htmlspecialchars($_POST['message']));
 
-// Create the email and send the message
-// Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
 $to = 'info@securitysquad.de';
 $email_subject = "Website Contact Form:  $name";
 $email_body = "You have received a new message from your website contact form.\n\n" . "Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nMessage:\n$message";
